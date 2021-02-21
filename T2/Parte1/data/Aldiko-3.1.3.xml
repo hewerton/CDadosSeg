@@ -1,0 +1,260 @@
+<?xml version="1.0" ?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="300089" android:versionName="3.1.3" android:installLocation="0" package="com.aldiko.android" platformBuildVersionCode="27" platformBuildVersionName="8.1.0">
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="22"/>
+	<uses-permission android:name="com.android.vending.BILLING"/>
+	<supports-screens android:largeScreens="true"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+	<permission android:name="com.aldiko.android.permission.C2D_MESSAGE" android:protectionLevel="0x00000002"/>
+	<uses-permission android:name="com.aldiko.android.permission.C2D_MESSAGE"/>
+	<application android:theme="@7F0B0170" android:label="@7F0802BE" android:icon="@7F030000" android:name="com.aldiko.android.AldikoApplication" android:hardwareAccelerated="true">
+		<activity android:name="com.dropbox.core.android.AuthActivity" android:launchMode="2" android:configChanges="0x00000090">
+			<intent-filter>
+				<data android:scheme="db-98u060v7s16gjrg"/>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+		</activity>
+		<provider android:name="com.aldiko.android.provider.LibraryContentProvider" android:exported="false" android:authorities="com.aldiko.android.provider.library"/>
+		<provider android:name="com.aldiko.android.provider.CatalogContentProvider" android:exported="false" android:authorities="com.aldiko.android.provider.catalog"/>
+		<provider android:name="com.aldiko.android.provider.BookViewSearchSuggestionsProvider" android:exported="false" android:authorities="com.aldiko.android.provider.BookViewSearchSuggestions"/>
+		<meta-data android:name="android.app.default_searchable" android:value="com.aldiko.android.ui.BookPickerActivity"/>
+		<meta-data android:name="com.google.android.gms.version" android:value="@7F0A0027"/>
+		<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@7F08030C"/>
+		<service android:name="com.aldiko.android.syncadapter.AuthenticatorService">
+			<intent-filter>
+				<action android:name="android.accounts.AccountAuthenticator"/>
+			</intent-filter>
+			<meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@7F070000"/>
+		</service>
+		<activity android:theme="@7F0B018A" android:name="com.aldiko.android.ui.HomeScreen"/>
+		<activity-alias android:name="com.aldiko.android.ui.AliasHomeScreen" android:enabled="@7F0C0026" android:targetActivity="com.aldiko.android.ui.HomeScreen">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity-alias>
+		<activity android:name="com.aldiko.android.ui.BookShelfActivity" android:configChanges="0x000004A0">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="opds"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="com.aldiko.android.ui.BookPickerActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.SEARCH"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.CREATE_SHORTCUT"/>
+			</intent-filter>
+			<meta-data android:name="android.app.searchable" android:resource="@7F070001"/>
+		</activity>
+		<activity android:name="com.aldiko.android.ui.MyLibraryActivity"/>
+		<activity android:name="com.aldiko.android.ui.LibrariesActivity" android:configChanges="0x000004A0"/>
+		<activity android:name="com.aldiko.android.ui.CalibreActivity" android:configChanges="0x000004A0"/>
+		<activity android:name="com.aldiko.android.ui.SendEventActivity"/>
+		<activity android:name="com.aldiko.android.ui.SdCardActivity" android:launchMode="2"/>
+		<activity android:name="com.aldiko.android.ui.SdCardActivityForSelectAnnotationFile" android:launchMode="2"/>
+		<activity android:name="com.aldiko.android.ui.InfoActivity"/>
+		<activity android:name="com.aldiko.android.ui.AuthorsActivity"/>
+		<activity android:name="com.aldiko.android.ui.CollectionsActivity"/>
+		<activity android:name="com.aldiko.android.ui.TagsActivity"/>
+		<activity android:name="com.aldiko.android.ui.OpdsCustomCatalogActivity"/>
+		<activity android:name="com.aldiko.android.browser.BrowserActivity" android:configChanges="0x00000480"/>
+		<activity android:name="com.aldiko.android.ui.CredentialsActivity"/>
+		<activity android:name="com.aldiko.android.ui.CatalogActivity" android:configChanges="0x000004A0">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="aldiko" android:host="www.feedbooks.com"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="com.aldiko.android.ui.CatalogMainActivity" android:configChanges="0x000004A0"/>
+		<receiver android:name="com.aldiko.android.ExternalStorageReceiver" android:enabled="@7F0C0002">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.MEDIA_MOUNTED"/>
+				<data android:scheme="file"/>
+			</intent-filter>
+		</receiver>
+		<service android:name="com.aldiko.android.ExternalStorageService" android:enabled="@7F0C0002"/>
+		<service android:name="com.aldiko.android.stat.StatService" android:exported="false"/>
+		<activity android:theme="@7F0B0189" android:name="com.aldiko.android.reader.ReaderActivity" android:exported="true" android:hardwareAccelerated="false"/>
+		<activity android:name="com.aldiko.android.reader.preferences.ReaderPreferenceActivity"/>
+		<activity android:name="com.aldiko.android.reader.preferences.ReaderColorPreferenceActivity"/>
+		<activity android:name="com.aldiko.android.reader.FindActivity" android:windowSoftInputMode="0x00000004"/>
+		<activity android:name="com.aldiko.android.reader.TocAndBookmarksActivity"/>
+		<activity android:name="com.aldiko.android.ui.DrmActivity"/>
+		<activity android:label="@7F08005A" android:name="com.aldiko.android.ui.DrmAuthorizeActivity"/>
+		<activity android:label="@7F080129" android:name="com.aldiko.android.ui.DrmAuthorizeChooseActivity"/>
+		<activity android:theme="@7F0B017F" android:name="com.aldiko.android.ui.dialog.ErrorActivity"/>
+		<activity android:theme="@7F0B0187" android:name="com.aldiko.android.ui.dialog.ReplaceFileActivity"/>
+		<activity android:name="com.aldiko.android.ui.ReceiveNotificationClickActivity"/>
+		<activity android:name="com.aldiko.android.ui.BookDetailsActivity"/>
+		<activity android:name="com.aldiko.android.ui.SendToAldikoBookListActivity"/>
+		<activity android:name="com.aldiko.android.ui.SettingsHoneycombActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:mimeType="*application/*" android:scheme="file" android:host="*" android:pathPattern=".*.json"/>
+				<data android:mimeType="*/*" android:scheme="content" android:host="*" android:pathPattern=".*\.json"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="com.aldiko.android.ui.SettingsDefaultActivity"/>
+		<activity android:label="@7F0801A5" android:name="com.aldiko.android.syncadapter.AuthenticatorActivity"/>
+		<activity android:label="@7F0801A5" android:name="com.aldiko.android.ui.LoginActivity"/>
+		<activity android:label="@7F0801A5" android:name="com.aldiko.android.ui.EmailLoginActivity"/>
+		<activity android:label="@7F080254" android:name="com.aldiko.android.ui.EmailRegistrationActivity"/>
+		<activity android:label="@7F0800F2" android:name="com.aldiko.android.ui.DefaultDrmAccountConfigActivity"/>
+		<activity android:name="com.aldiko.android.ui.AddBooksPromotionActivity"/>
+		<activity android:theme="@7F0B017F" android:name="com.aldiko.android.ui.dialog.DownloadErrorDialogActivity" android:exported="true" android:configChanges="0x000004A0"/>
+		<activity android:theme="@7F0B002A" android:name="com.aldiko.android.ui.ImportActivity" android:exported="true" android:configChanges="0x000004A0"/>
+		<activity-alias android:name="com.aldiko.android.ui.AliasImportActivity" android:enabled="@7F0C0022" android:targetActivity="com.aldiko.android.ui.ImportActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="epub"/>
+				<data android:scheme="stanza"/>
+				<data android:host="*"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="http" android:host="*" android:pathPattern=".*\.acsm"/>
+				<data android:scheme="file" android:host="*" android:pathPattern=".*\.acsm"/>
+				<data android:mimeType="application/vnd.adobe.adept+xml" android:scheme="http" android:host="*"/>
+				<data android:mimeType="application/vnd.adobe.adept+xml"/>
+				<data android:mimeType="application/octet-stream" android:pathPattern=".*\.acsm"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="http" android:host="*" android:pathPattern=".*\.acsm"/>
+				<data android:scheme="file" android:host="*" android:pathPattern=".*\.acsm"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:mimeType="application/vnd.adobe.adept+xml"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:scheme="file" android:host="*" android:pathPattern=".*\.acsm"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="http" android:host="*" android:pathPattern=".*\.epub"/>
+				<data android:mimeType="application/epub+zip"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="http" android:host="*" android:pathPattern=".*\.epub"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="http" android:host="*" android:pathPattern=".*\.pdf"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:mimeType="application/pdf"/>
+				<data android:mimeType="application/epub"/>
+				<data android:mimeType="application/epub+zip"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:scheme="file"/>
+				<data android:pathPattern=".*\.epub"/>
+				<data android:pathPattern=".*\.pdf"/>
+				<data android:scheme="file" android:host="*" android:pathPattern=".*\.epub"/>
+				<data android:scheme="file" android:host="*" android:pathPattern=".*\.pdf"/>
+			</intent-filter>
+		</activity-alias>
+		<activity android:theme="@7F0B002A" android:name="com.aldiko.android.ui.dialog.DownloadFontsActivity"/>
+		<service android:name="com.google.analytics.tracking.android.CampaignTrackingService"/>
+		<receiver android:name="com.google.analytics.tracking.android.CampaignTrackingReceiver" android:exported="true">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER"/>
+			</intent-filter>
+		</receiver>
+		<activity android:theme="@android:0103000F" android:name="com.google.android.gms.ads.AdActivity" android:configChanges="0x00000FB0"/>
+		<activity android:theme="@android:01030010" android:label="@7F0802BE" android:name="com.facebook.FacebookActivity" android:configChanges="0x000005B0"/>
+		<activity android:name="com.aldiko.android.test.FragmentTestActivity">
+			<intent-filter>
+				<category android:name="android.intent.category.TEST"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="eu.janmuller.android.simplecropimage.CropImage"/>
+		<receiver android:label="@7F080373" android:name="com.aldiko.android.ui.StackWidgetProvider" android:enabled="@7F0C0001">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+			</intent-filter>
+			<meta-data android:name="android.appwidget.provider" android:resource="@7F070005"/>
+		</receiver>
+		<service android:name="com.aldiko.android.ui.StackWidgetService" android:permission="android.permission.BIND_REMOTEVIEWS" android:enabled="@7F0C0001" android:exported="false"/>
+		<receiver android:label="NetworkChangeReceiver" android:name="com.aldiko.android.receiver.NetworkChangeReceiver">
+			<intent-filter>
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+			</intent-filter>
+		</receiver>
+		<activity android:name="com.aldiko.android.dropbox.DropboxFilesActivity"/>
+		<activity android:name="com.aldiko.android.googledrive.GoogleDriveFilesActivity"/>
+		<activity android:name="com.aldiko.android.ui.AudioBookDetailActivity"/>
+		<activity android:name="com.aldiko.android.ui.AudioBookPlayActivity"/>
+		<activity android:name="com.aldiko.android.ui.BookDetailsForAudioBookActivity"/>
+		<activity android:name="com.aldiko.android.ui.FragmentContainerActivity"/>
+		<service android:name="com.aldiko.android.service.AudioBookPlayService" android:exported="true"/>
+		<activity android:theme="@android:01030010" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true"/>
+		<service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true"/>
+		<activity android:theme="@android:01030010" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+		<activity android:theme="@android:01030010" android:name="com.android.billingclient.api.ProxyBillingActivity" android:configChanges="0x000005B0"/>
+		<receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false"/>
+		<receiver android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES" android:enabled="true" android:exported="true">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER"/>
+			</intent-filter>
+		</receiver>
+		<service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false"/>
+		<service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+				<category android:name="com.aldiko.android"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false"/>
+		<service android:name="com.google.firebase.iid.FirebaseInstanceIdService" android:exported="true">
+			<intent-filter android:priority="-500">
+				<action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+			</intent-filter>
+		</service>
+		<provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.aldiko.android.firebaseinitprovider" android:initOrder="100"/>
+		<meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT"/>
+		<meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+	</application>
+</manifest>

@@ -1,0 +1,298 @@
+<?xml version="1.0" ?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="90003609" android:versionName="7.1.1 (2634)" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" package="com.adobe.creativeapps.gather" platformBuildVersionCode="30" platformBuildVersionName="11">
+	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="30"/>
+	<queries>
+		<intent>
+			<action android:name="android.intent.action.SEND"/>
+			<data android:mimeType="image/*"/>
+		</intent>
+		<intent>
+			<action android:name="android.intent.action.SEND"/>
+			<data android:mimeType="text/*"/>
+		</intent>
+		<intent>
+			<action android:name="android.intent.action.SEND"/>
+			<data android:mimeType="application/*"/>
+		</intent>
+		<intent>
+			<action android:name="android.intent.action.VIEW"/>
+			<data android:scheme="http"/>
+		</intent>
+		<intent>
+			<action android:name="android.intent.action.VIEW"/>
+			<data android:scheme="https"/>
+		</intent>
+		<intent>
+			<action android:name="com.google.android.youtube.api.StandalonePlayerActivity.START"/>
+		</intent>
+	</queries>
+	<uses-feature android:name="android.hardware.camera" android:required="false"/>
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+	<uses-permission android:name="android.permission.CAMERA"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_INTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28"/>
+	<uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.alarm.permission.SET_ALARM"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+	<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+	<uses-feature android:glEsVersion="0x00030000" android:required="true"/>
+	<uses-permission android:name="com.samsung.android.iap.permission.BILLING"/>
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+	<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+	<uses-permission android:name="android.permission.REORDER_TASKS"/>
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+	<uses-permission android:name="com.android.vending.BILLING"/>
+	<application android:theme="@7F13027B" android:label="@7F1205DC" android:icon="@7F100000" android:name="com.adobe.creativeapps.gatherapp.GatherApplicationShell" android:allowBackup="true" android:largeHeap="true" android:supportsRtl="true" android:extractNativeLibs="false" android:fullBackupContent="@7F150002" android:usesCleartextTraffic="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+		<meta-data android:name="com.google.firebase.ml.vision.DEPENDENCIES" android:value="ocr"/>
+		<meta-data android:name="com.samsung.android.icon_container.has_icon_container" android:value="true"/>
+		<activity android:name="com.adobe.creativeapps.gather.activity.Shape360Activity">
+			<intent-filter android:label="@7F1206ED" android:icon="@7F100000">
+				<action android:name="com.adobe.360action.CAPTURE"/>
+			</intent-filter>
+			<meta-data android:name="com.adobe.360action.metadata" android:value="[{'id':'DCA5B579-52FA-4387-8ABB-7C6C06136BF1', 'action-type':'capture','inputs':[],'outputs':[{'name':'Png','types':['image/png']} ,{'name':'Svg','types':['image/svg+xml']}]} ]"/>
+		</activity>
+		<activity android:name="com.adobe.creativeapps.gather.activity.Brush360Activity">
+			<intent-filter android:label="@7F1206EC" android:icon="@7F100000">
+				<action android:name="com.adobe.360action.CAPTURE"/>
+			</intent-filter>
+			<meta-data android:name="com.adobe.360action.metadata" android:value="[                                 {                                     'action-type': 'capture',                                     'id':'4A07B4B2-3635-4C46-AEDA-4DF71955AF2E',                                     'subtype': 'sketchorpsbrush',                                     'name': {                                             'en_US': 'Adobe Capture'                                     },                                     'inputs': [  ],                                     'outputs':                                     [                                         {                                             'name': 'output',                                             'types': [                                                     'application/vnd.adobe.element.brush+dcx'                                             ]                                         }                                     ]                                 }                             ]"/>
+		</activity>
+		<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@7F120597"/>
+		<activity android:name="com.behance.beprojects.comments.ui.ProjectCommentsActivity" android:launchMode="2" android:configChanges="0x00000010" android:windowSoftInputMode="0x00000010"/>
+		<activity android:theme="@7F13065A" android:label="@7F12026D" android:name="com.facebook.FacebookActivity" android:configChanges="0x000005B0"/>
+		<activity android:theme="@7F130279" android:label="@7F1205DC" android:name="com.adobe.creativeapps.gather.activity.GatherSplashScreenActivity" android:launchMode="2" android:resizeableActivity="false">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:mimeType="image/*"/>
+			</intent-filter>
+			<meta-data android:name="android.app.shortcuts" android:resource="@7F150006"/>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="@7F1200C0" android:host="@7F1200BF"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="@7F1200C0" android:host="adobe-capture-cc.app.link"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="@7F1200C0" android:host="adobe-capture-cc-alternate.app.link"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="@7F1200C0" android:host="adobe-capture-cc.test-app.link"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="@7F1200C0" android:host="adobe-capture-cc-alternate.test-app.link"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="https" android:host="@7F1200BF"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="https" android:host="adobe-capture-cc.app.link"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="https" android:host="adobe-capture-cc-alternate.app.link"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="https" android:host="adobe-capture-cc.test-app.link"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="https" android:host="adobe-capture-cc-alternate.test-app.link"/>
+			</intent-filter>
+			<intent-filter android:autoVerify="true">
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="https" android:host="color.adobe.com" android:pathPrefix="/create/image-gradient"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F130278" android:label="@7F1205DC" android:name="com.adobe.creativeapps.gather.activity.GatherTourActivity" android:launchMode="2"/>
+		<activity android:theme="@7F1302F7" android:label="@7F1205DC" android:name="com.adobe.creativeapps.gather.activity.GatherBrowserActivity" android:windowSoftInputMode="0x00000010">
+			<meta-data android:name="WindowManagerPreference:SuppressWindowControlNavigationButton" android:value="true"/>
+		</activity>
+		<activity android:theme="@7F1302F7" android:label="@7F1205DC" android:name="com.adobe.creativeapps.gather.activity.GatherAssetPreviewInfoImageActivity"/>
+		<activity android:theme="@7F130217" android:label="@7F1205DC" android:name="com.adobe.creativeapps.gather.activity.GatherLibraryCollaborationActivity" android:exported="false" android:parentActivityName="com.adobe.creativeapps.gather.activity.GatherBrowserActivity"/>
+		<activity android:theme="@7F13027B" android:label="@7F1205DC" android:name="com.adobe.creativeapps.gather.activity.GatherInterstitialActivity"/>
+		<activity android:theme="@7F13027B" android:label="@7F1205DC" android:name="com.adobe.creativeapps.gather.activity.GatherInterstitialActivityNew"/>
+		<provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="@7F120644" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@7F150004"/>
+		</provider>
+		<service android:name="com.adobe.creativesdk.foundation.internal.auth.authenticator.AdobeCSDKAdobeIDAuthenticatorServiceCC">
+			<intent-filter>
+				<action android:name="android.accounts.AccountAuthenticator"/>
+			</intent-filter>
+			<meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@7F150000"/>
+		</service>
+		<activity android:name="com.adobe.creativeapps.gather.activity.GatherDeepLinkActivity"/>
+		<activity android:name="com.adobe.creativeapps.gather.activity.GatherModuleActivity">
+			<meta-data android:name="WindowManagerPreference:SuppressWindowControlNavigationButton" android:value="true"/>
+		</activity>
+		<activity android:theme="@7F1302DF" android:label="@7F120494" android:name="com.adobe.creativeapps.gather.color.capture.AdobeColorCaptureActivity"/>
+		<activity android:theme="@7F130368" android:label="@7F1208CD" android:name="com.adobe.creativeapps.gather.shape.ui.activity.AdobeShapeCaptureActivity"/>
+		<activity android:theme="@7F1302DF" android:label="@7F1202D2" android:name="com.adobe.creativeapps.gather.brush.capture.AdobeBrushCaptureActivity"/>
+		<activity android:theme="@7F1302DF" android:name="com.adobe.creativeapps.gather.pattern.capture.AdobePatternCaptureActivity"/>
+		<activity android:theme="@7F1302DF" android:label="@7F1207B4" android:name="com.adobe.creativeapps.gather.material.ui.activity.MaterialCaptureActivity"/>
+		<activity android:theme="@7F130244" android:label="@7F1205D8" android:name="com.adobe.creativeapps.gather.font.ui.activity.AdobeFontCaptureActivity"/>
+		<activity android:theme="@7F1302DF" android:name="com.adobe.creativeapps.gathercorelibrary.activity.GatherLibraryAssetSaveActivity"/>
+		<activity android:theme="@7F1302DF" android:name="com.adobe.creativeapps.gathercorelibrary.activity.GatherAssetEditInfoActivity"/>
+		<activity android:theme="@7F13027B" android:name="com.adobe.creativeapps.gathercorelibrary.activity.CloudPickerActivity"/>
+		<activity android:theme="@7F13027B" android:name="com.adobe.creativeapps.gathercorelibrary.activity.GatherFragmentContainerActivity"/>
+		<activity android:theme="@7F130599" android:name="com.adobe.camera.CameraTestActivity"/>
+		<activity android:theme="@7F13002E" android:name="com.adobe.creativesdk.foundation.applibrary.internal.AppLibraryActivity"/>
+		<activity android:theme="@7F13018D" android:name="com.adobe.creativesdk.foundation.applibrary.internal.ActionResolverActivity" android:exported="false" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true" android:documentLaunchMode="3" android:relinquishTaskIdentity="true"/>
+		<activity android:theme="@7F1301D7" android:name="com.behance.sdk.ui.activities.BehanceSDKProjectEditorActivity" android:exported="false"/>
+		<activity android:theme="@7F1301D7" android:name="com.behance.sdk.ui.activities.BehanceSDKCropperActivity"/>
+		<activity android:theme="@7F1301AF" android:name="com.behance.sdk.ui.activities.BehanceSDKPublishProjectActivity" android:exported="false"/>
+		<activity android:theme="@7F1301AF" android:name="com.behance.sdk.ui.activities.BehanceSDKCreateProjectWFActivity" android:exported="false"/>
+		<activity android:theme="@7F1301F1" android:name="com.behance.sdk.ui.activities.BehanceSDKPublishResultsActivity"/>
+		<activity android:theme="@7F1301D7" android:name="com.behance.sdk.ui.activities.BehanceSDKEditProfileActivity" android:exported="false"/>
+		<activity android:theme="@7F1301CF" android:name="com.facebook.LoginActivity" android:exported="false"/>
+		<activity android:name="com.behance.sdk.ui.activities.BehanceSDKLoginToTwitterActivity" android:exported="false"/>
+		<activity android:theme="@7F1301F8" android:name="com.behance.sdk.ui.activities.BehanceSDKUnlinkSocialAccountActivity" android:exported="false"/>
+		<activity android:theme="@7F1301B1" android:name="com.behance.sdk.ui.activities.BehanceSDKAdobeCloudSelectionActivity"/>
+		<activity android:theme="@7F1301B4" android:name="com.behance.sdk.ui.activities.BehanceSDKProjectDetailActivity"/>
+		<activity android:theme="@7F1301B0" android:name="com.behance.sdk.ui.activities.BehanceSDKCCLauncherActivity"/>
+		<service android:name="com.behance.sdk.services.BehanceSDKPublishProjectService"/>
+		<service android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService" android:enabled="true"/>
+		<service android:name="com.behance.sdk.services.BehanceSDKProjectEditorService"/>
+		<activity android:theme="@7F130029" android:label="@7F120925" android:name="com.adobe.creativesdk.foundation.stock.internal.activity.StartUpActivity" android:configChanges="0x00000480" android:windowSoftInputMode="0x00000004"/>
+		<service android:name="com.adobe.creativesdk.foundation.stock.internal.services.StockBackgroundImagesDownloaderService"/>
+		<activity android:theme="@7F130029" android:label="@7F120925" android:name="com.adobe.creativesdk.foundation.stock.internal.activity.SearchResultsActivity" android:configChanges="0x000004A0"/>
+		<activity android:theme="@7F130593" android:label="@7F120253" android:name="com.adobe.creativesdk.foundation.stock.internal.activity.MyAccountActivity"/>
+		<activity android:theme="@7F130029" android:label="@7F12091A" android:name="com.adobe.creativesdk.foundation.stock.internal.activity.FiltersActivity"/>
+		<activity android:theme="@7F130029" android:label="@7F12091D" android:name="com.adobe.creativesdk.foundation.stock.internal.activity.OrientationsActivity"/>
+		<activity android:theme="@7F130029" android:name="com.adobe.creativesdk.foundation.stock.internal.activity.OneUpViewActivity" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F130003" android:name="com.adobe.creativesdk.foundation.internal.storage.controllers.AdobeUXAssetOneUpViewerActivity" android:exported="false" android:configChanges="0x00000D80"/>
+		<activity android:theme="@7F130003" android:name="com.adobe.creativesdk.foundation.internal.storage.controllers.AdobeUXPhotoAssetOneUpViewerActivity" android:exported="false" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F13001B" android:name="com.adobe.creativesdk.foundation.internal.storage.controllers.AdobeUxAssetBrowserV2Activity" android:exported="false" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F130003" android:name="com.adobe.creativesdk.foundation.internal.storage.controllers.AdobeUXAssetVideoActivity" android:exported="false" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F130003" android:name="com.adobe.creativesdk.foundation.internal.storage.controllers.AdobeUXLibraryItemCollectionOneUpViewerActivity" android:exported="false" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F130003" android:name="com.adobe.creativesdk.foundation.internal.storage.controllers.AdobeUXMobilePackageItemOneUpViewerActivity" android:exported="false" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F130003" android:name="com.adobe.creativesdk.foundation.internal.storage.controllers.AdobeUXCompositionOneUpViewerActivity" android:exported="false" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F130027" android:name="com.adobe.creativesdk.foundation.internal.storage.controllers.edit.AdobeAssetEditActivity" android:exported="false" android:configChanges="0x00000D80"/>
+		<activity android:theme="@7F130027" android:name="com.adobe.creativesdk.foundation.internal.storage.controllers.libraryedit.AdobeDesignLibraryMoveActivity" android:exported="false" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F13001C" android:name="com.adobe.creativesdk.foundation.internal.settings.CloudPickerActivity" android:exported="false" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F130003" android:name="com.adobe.creativesdk.foundation.internal.storage.controllers.AdobeShowUploadTasksActivity" android:exported="false" android:configChanges="0x00000D80" android:resizeableActivity="true"/>
+		<activity android:theme="@7F130204" android:name="com.adobe.creativesdk.color.internal.ui.activity.ColorThemeEditActivity" android:windowSoftInputMode="0x00000030"/>
+		<activity android:theme="@7F130200" android:name="com.adobe.creativesdk.color.internal.ui.activity.ColorComponentActivity" android:windowSoftInputMode="0x00000030"/>
+		<activity android:theme="@7F130204" android:name="com.adobe.creativesdk.color.internal.ui.activity.LibraryColorItemsListActivity"/>
+		<activity android:theme="@7F13003F" android:name="com.adobe.creativesdk.foundation.internal.auth.AdobeDataUsageNoticeActivity" android:configChanges="0x00000130"/>
+		<activity android:theme="@7F130581" android:label="@7F1201C5" android:name="com.adobe.creativesdk.foundation.internal.auth.AdobeAuthSignInActivity" android:multiprocess="true" android:launchMode="2" android:configChanges="0x00000480" android:windowSoftInputMode="0x00000031"/>
+		<activity android:theme="@7F130581" android:label="@7F1201C5" android:name="com.adobe.creativesdk.foundation.internal.auth.AdobeAuthContinuableEventActivity" android:exported="false" android:multiprocess="true" android:launchMode="0" android:windowSoftInputMode="0x00000031"/>
+		<activity android:name="com.adobe.creativesdk.foundation.internal.base.AdobeTOUHandlerActivity"/>
+		<activity android:theme="@android:01030010" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true"/>
+		<service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true"/>
+		<service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true">
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.ndk.CrashlyticsNdkRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.ml.vision.VisionRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.ml.custom.CustomModelRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.ml.common.CommonComponentRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+		</service>
+		<activity android:name="com.facebook.CustomTabMainActivity"/>
+		<activity android:name="com.facebook.CustomTabActivity"/>
+		<activity android:theme="@android:01030010" android:name="com.google.firebase.auth.internal.FederatedSignInActivity" android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN" android:exported="true" android:excludeFromRecents="true" android:launchMode="2"/>
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+			</intent-filter>
+		</receiver>
+		<activity android:theme="@android:01030010" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+		<provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.adobe.creativeapps.gather.firebaseinitprovider" android:initOrder="100" android:directBootAware="true"/>
+		<receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false"/>
+		<service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false"/>
+		<service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+		<meta-data android:name="com.google.android.gms.version" android:value="@7F0C0057"/>
+		<activity android:theme="@7F130245" android:name="androidx.fragment.app.testing.FragmentScenario$EmptyFragmentActivity" android:exported="true" android:taskAffinity="" android:multiprocess="true">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+			</intent-filter>
+		</activity>
+		<provider android:name="com.facebook.marketing.internal.MarketingInitProvider" android:exported="false" android:authorities="com.adobe.creativeapps.gather.MarketingInitProvider"/>
+		<provider android:name="com.facebook.internal.FacebookInitProvider" android:exported="false" android:authorities="com.adobe.creativeapps.gather.FacebookInitProvider"/>
+		<receiver android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver" android:exported="false">
+			<intent-filter>
+				<action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+			</intent-filter>
+		</receiver>
+		<activity android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity" android:enabled="false" android:exported="false" android:process=":playcore_missing_splits_activity" android:stateNotNeeded="true" android:launchMode="3"/>
+		<activity android:theme="@7F1305B7" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:enabled="false" android:exported="false" android:stateNotNeeded="true"/>
+		<service android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService" android:enabled="false" android:exported="true"/>
+		<provider android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer" android:exported="false" android:multiprocess="true" android:authorities="com.adobe.creativeapps.gather.lifecycle-process"/>
+		<service android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery" android:exported="false">
+			<meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+		</service>
+		<service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+		<receiver android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" android:exported="false"/>
+		<activity android:theme="@7F130304" android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F130305" android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F130306" android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F1305A1" android:name="com.samsung.android.sdk.iap.lib.activity.DialogActivity" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F1305A1" android:name="com.samsung.android.sdk.iap.lib.activity.CheckPackageActivity" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F1305B8" android:name="com.samsung.android.sdk.iap.lib.activity.AccountActivity" android:configChanges="0x00000480"/>
+		<activity android:theme="@7F1305A1" android:name="com.samsung.android.sdk.iap.lib.activity.PaymentActivity" android:configChanges="0x00000480"/>
+		<meta-data android:name="com.google.android.play.billingclient.version" android:value="2.1.0"/>
+		<activity android:theme="@android:01030010" android:name="com.android.billingclient.api.ProxyBillingActivity" android:configChanges="0x000005B0"/>
+		<meta-data android:name="com.android.dynamic.apk.fused.modules" android:value="base"/>
+		<meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+		<meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_STANDALONE_APK"/>
+		<meta-data android:name="com.android.vending.splits" android:value="@7F150007"/>
+		<meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+	</application>
+</manifest>

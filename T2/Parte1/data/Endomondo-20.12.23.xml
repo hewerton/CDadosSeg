@@ -1,0 +1,290 @@
+<?xml version="1.0" ?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:sharedUserId="Endomondo.com" android:versionCode="332" android:versionName="20.12.23" android:installLocation="0" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" package="com.endomondo.android" platformBuildVersionCode="29" platformBuildVersionName="10">
+	<uses-sdk android:minSdkVersion="18" android:targetSdkVersion="29"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" android:maxSdkVersion="22"/>
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+	<uses-permission android:name="com.android.vending.BILLING"/>
+	<uses-permission android:name="com.endomondo.android.permission.C2D_MESSAGE"/>
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+	<permission android:name="com.endomondo.android.permission.C2D_MESSAGE" android:protectionLevel="0x00000002"/>
+	<supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_CONTACTS"/>
+	<uses-permission android:name="android.permission.WRITE_CONTACTS" android:maxSdkVersion="22"/>
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.BODY_SENSORS"/>
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+	<uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+	<uses-permission android:name="com.dsi.ant.permission.ANT"/>
+	<uses-permission android:name="com.dsi.ant.permission.ANT_ADMIN"/>
+	<uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="com.samsung.accessory.permission.ACCESSORY_FRAMEWORK"/>
+	<uses-permission android:name="com.samsung.WATCH_APP_TYPE.Companion"/>
+	<uses-feature android:name="android.hardware.location.gps"/>
+	<uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+	<application android:theme="@7F1100C9" android:label="@7F100030" android:icon="@7F0E0000" android:name="com.endomondo.android.EndomondoApplication" android:persistent="false" android:allowTaskReparenting="false" android:allowBackup="false" android:hardwareAccelerated="true" android:supportsRtl="true">
+		<meta-data android:name="com.crashlytics.ApiKey" android:value="e87ab368a1f1f0ea920023f59ca0ba89908dc451"/>
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDFB69DUm5EZacEFeaSJxrXffarxWKwHN8"/>
+		<activity android:theme="@android:0103000F" android:name="com.google.android.gms.ads.AdActivity" android:exported="false" android:configChanges="0x00000FB0"/>
+		<receiver android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+				<category android:name="com.endomondo.android"/>
+			</intent-filter>
+		</receiver>
+		<service android:name="com.endomondo.android.common.notifications.gcm.GccmIntentService" android:exported="false">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+			</intent-filter>
+		</service>
+		<service android:name="com.endomondo.android.common.notifications.endonoti.NotificationStatusService" android:exported="false"/>
+		<meta-data android:name="com.endomondo.android" android:resource="@7F130002"/>
+		<receiver android:name="com.endomondo.android.common.accounts.shealth.alarmmanager.SHealthSyncAlarmReceiver" android:process=":remote"/>
+		<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@7F10002F"/>
+		<meta-data android:name="com.google.android.gms.version" android:value="@7F0B0008"/>
+		<meta-data android:name="com.samsung.android.health.permission.write" android:value="com.samsung.health.exercise"/>
+		<uses-library android:name="org.apache.http.legacy" android:required="false"/>
+		<provider android:name="android.support.v4.content.FileProvider" android:exported="false" android:authorities="com.endomondo.android.fileprovider" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@7F130001"/>
+		</provider>
+		<provider android:name="com.facebook.FacebookContentProvider" android:exported="true" android:authorities="com.facebook.app.FacebookContentProvider202423869273"/>
+		<activity android:theme="@7F1101CB" android:label="@7F100030" android:name="com.facebook.FacebookActivity" android:configChanges="0x000005B0"/>
+		<activity android:label="@7F100030" android:name="com.endomondo.android.EndoSplash" android:launchMode="1">
+			<intent-filter android:label="@7F100030">
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="com.endomondo.android.common.partners.myfitnesspal.MfpLinkActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:scheme="mfp-endomondo-mfp-endo-com.endomondo.mfplink"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="com.endomondo.android.common.maps.googlev2.RouteMapActivity"/>
+		<activity android:name="com.endomondo.android.common.maps.googlev2.HistoryMapActivity"/>
+		<activity android:name="com.endomondo.android.common.generic.DummyHome"/>
+		<activity android:name="com.endomondo.android.common.tablet.DashboardActivity"/>
+		<activity android:name="com.endomondo.android.common.workout.stats.StatsActivity"/>
+		<activity android:name="com.endomondo.android.common.workout.stats.fullscreen.StatsFullScreenActivity"/>
+		<activity android:theme="@7F1100CD" android:name="com.endomondo.android.common.workout.details.WorkoutDetailsActivity"/>
+		<activity android:name="com.endomondo.android.common.workout.details.workoutedit.WorkoutDetailsEditActivity"/>
+		<activity android:theme="@7F1100CE" android:name="com.endomondo.android.common.workout.editextras.PhotoPreviewActivity" android:windowSoftInputMode="0x00000003"/>
+		<activity android:theme="@7F1100CE" android:name="com.endomondo.android.common.generic.PhotoFlipperActivity" android:windowSoftInputMode="0x00000003"/>
+		<activity android:label="@7F1004FA" android:name="com.endomondo.android.common.settings.SettingsActivity"/>
+		<activity android:name="com.endomondo.android.common.accounts.EmailsActivity"/>
+		<activity android:name="com.endomondo.android.common.workout.manual.ManualWorkoutActivity"/>
+		<activity android:name="com.endomondo.android.common.accessory.connect.AccessoryConnectActivity"/>
+		<activity android:label="@7F10087F" android:name="com.endomondo.android.common.social.friends.suggested.SuggestedFriendsActivity"/>
+		<activity android:name="com.endomondo.android.common.login.startscreen.StartScreenActivity"/>
+		<activity android:name="com.endomondo.android.common.login.signup.SignupActivity"/>
+		<activity android:name="com.endomondo.android.common.login.signup.country.CountryListActivity"/>
+		<activity android:name="com.endomondo.android.common.login.gdprconsent.GDPRConsentActivity"/>
+		<activity android:name="com.endomondo.android.common.login.gdprconsent.learnmore.LearnMoreActivity"/>
+		<activity android:name="com.endomondo.android.common.login.newsletter.SignupNewsletterActivity"/>
+		<activity android:name="com.endomondo.android.common.login.signup.signupextra.SignupExtrasActivity"/>
+		<activity android:name="com.endomondo.android.common.login.login.LoginActivity"/>
+		<activity android:name="com.endomondo.android.common.login.login.forgotpassword.ForgotPasswordActivity"/>
+		<activity android:name="com.endomondo.android.common.gdpr.birthdaycountryconfirm.BirthdayCountryConfirmActivity"/>
+		<activity android:name="com.endomondo.android.common.gdpr.termsaccept.TermsAcceptActivity"/>
+		<activity android:label="@7F100540" android:name="com.endomondo.android.common.newsfeed.activity.NewsFeedFriendsActivity"/>
+		<activity android:label="@7F10066E" android:name="com.endomondo.android.common.route.RoutesActivity"/>
+		<activity android:name="com.endomondo.android.common.route.RouteDetailsActivity"/>
+		<activity android:name="com.endomondo.android.common.motivation.BeatYourselfActivity"/>
+		<activity android:name="com.endomondo.android.common.newsfeed.lcp.LikeCommentPeptalkListsActivity"/>
+		<activity android:name="com.endomondo.android.common.newsfeed.lcp.LCPOverviewActivity"/>
+		<activity android:name="com.endomondo.android.common.route.ShowPoiWebViewActivity"/>
+		<activity android:name="com.endomondo.android.common.tracker.zoneswitch.ZoneActivity"/>
+		<activity android:name="com.endomondo.android.common.profile.ProfileViewActivity"/>
+		<activity android:label="@7F100397" android:name="com.endomondo.android.common.social.friends.FriendsActivity" android:windowSoftInputMode="0x00000010"/>
+		<activity android:name="com.endomondo.android.common.accounts.PicPickerActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.about.AboutActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.server.WebviewSettingsActivity"/>
+		<activity android:theme="@7F1100CC" android:name="com.endomondo.android.common.settings.connectandshare.ConnectAndShareActivity" android:windowSoftInputMode="0x00000010"/>
+		<activity android:name="com.endomondo.android.common.settings.debug.DebugSettingsActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.debug.DebugSettingsNaggingActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.debug.testdeeplinks.DeeplinksTestActivity"/>
+		<activity android:name="com.endomondo.android.common.accounts.account.AccountProfileActivity"/>
+		<activity android:name="com.endomondo.android.common.notifications.settings.NotificationSettingsActivity"/>
+		<activity android:theme="@7F1100CD" android:name="com.endomondo.android.common.workout.settings.WorkoutSettingsActivity"/>
+		<activity android:name="com.endomondo.android.common.workout.settings.workouttype.WorkoutTypeActivity"/>
+		<activity android:name="com.endomondo.android.common.workout.settings.countdown.CountdownActivity"/>
+		<activity android:name="com.endomondo.android.common.workout.settings.workoutgoal.WorkoutGoalActivity"/>
+		<activity android:name="com.endomondo.android.common.generic.picker.newpickers.distance.DistanceActivity"/>
+		<activity android:name="com.endomondo.android.common.generic.picker.newpickers.duration.DurationActivity"/>
+		<activity android:name="com.endomondo.android.common.generic.picker.newpickers.calories.CaloriesActivity"/>
+		<activity android:name="com.endomondo.android.common.generic.picker.newpickers.date.DateActivity"/>
+		<activity android:theme="@7F1100CD" android:name="com.endomondo.android.common.workout.settings.sportlist.SportListActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.SettingsAccessoryActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.SettingsHeartRateMonitorActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.audio.SettingsAudioActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.audio.SettingsAudioLanguagesActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.SettingsPrivacyCenterActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.deleteuser.DeleteUserActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.exportuserdata.ExportUserDataActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.gdpr.YourConsentsActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.SettingsHelpActivity"/>
+		<activity android:name="com.endomondo.android.common.challenges.ChallengeActivity" android:windowSoftInputMode="0x00000020"/>
+		<activity android:name="com.endomondo.android.common.challenges.createChallenge.CreateChallengeActivity"/>
+		<activity android:label="@7F100087" android:name="com.endomondo.android.common.challenges.ChallengesActivityPlus"/>
+		<activity android:name="com.endomondo.android.common.trainingplan.TrainingSessionActivity"/>
+		<activity android:name="com.endomondo.android.common.notifications.endonoti.views.MessageViewActivity"/>
+		<activity android:name="com.endomondo.android.common.calendar.ui.CalendarActivity"/>
+		<activity android:name="com.endomondo.android.common.workout.summary.info.HydrationInfoActivity"/>
+		<activity android:name="com.endomondo.android.common.nagging.whatsnew.WhatsNewActivity"/>
+		<activity android:name="com.endomondo.android.common.purchase.redeem.RedeemActivity" android:windowSoftInputMode="0x00000005"/>
+		<activity android:name="com.endomondo.android.common.purchase.redeem.RedeemDoneActivity"/>
+		<activity android:name="com.endomondo.android.common.profile.nagging.NaggingReasonActivity"/>
+		<activity android:name="com.endomondo.android.common.profile.nagging.NaggingUpdateProfileActivity"/>
+		<activity android:name="com.endomondo.android.common.generic.WebviewGenericActivity"/>
+		<activity android:name="com.endomondo.android.common.deeplink.DeepLinkActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="webview" android:host="endomondo.signup" android:pathPrefix="/terms"/>
+				<data android:scheme="webview" android:host="endomondo.signup" android:pathPrefix="/privacy"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/connect/myfitnesspal"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/challenges"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/profile"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/people/friends"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/workouts"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/requests"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/page"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/premium"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/stats"/>
+				<data android:scheme="endoapp" android:host="app.endomondo.com" android:pathPrefix="/training/plan"/>
+				<data android:scheme="endo" android:host="app.endomondo.com" android:pathPrefix="/mfp"/>
+			</intent-filter>
+			<intent-filter android:autoVerify="true">
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/connect/myfitnesspal"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/connect/myfitnesspal"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/challenges"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/challenges"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/profile"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/profile"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/people/friends"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/people/friends"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/workouts"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/workouts"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/requests"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/requests"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/page"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/page"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/stats"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/stats"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/premium"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/premium"/>
+				<data android:scheme="http" android:host="app.endomondo.com" android:pathPrefix="/training/plan"/>
+				<data android:scheme="https" android:host="app.endomondo.com" android:pathPrefix="/training/plan"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="com.endomondo.android.common.accessory.bike.BikeSetWheelCircumferenceActivity" android:windowSoftInputMode="0x00000005"/>
+		<activity android:theme="@7F1100CA" android:name="com.endomondo.android.common.purchase.upgradeactivity.UpgradeActivity"/>
+		<activity android:name="com.endomondo.android.common.nutrition.NutritionActivity"/>
+		<activity android:name="com.endomondo.android.common.shop.ShopActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.wearable.wear.AndroidWearSettingsActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.wearable.wear.AndroidWearSettingsZonesActivity"/>
+		<activity android:name="com.endomondo.android.common.trainingplan.wizard.TrainingPlanIntroActivity"/>
+		<activity android:name="com.endomondo.android.common.trainingplan.wizard.TrainingPlanWizardActivity"/>
+		<activity android:name="com.endomondo.android.common.trainingplan.wizard.TrainingPlanCongratsActivity"/>
+		<activity android:name="com.endomondo.android.common.trainingplan.wizard.TrainingPlanMenuActivity"/>
+		<activity android:name="com.endomondo.android.common.commitments.CommitmentsActivity"/>
+		<activity android:name="com.endomondo.android.common.commitments.CommitmentDetailsActivity"/>
+		<activity android:name="com.endomondo.android.common.commitments.CreateCommitmentActivity"/>
+		<activity android:name="com.endomondo.android.common.settings.live.LiveNotificationsSettingsActivity"/>
+		<activity android:name="com.endomondo.android.common.workout.stats.weekly.WeeklyStatsActivity"/>
+		<activity android:name="com.endomondo.android.common.social.share.photosharing.PhotoShareActivity"/>
+		<activity android:name="com.endomondo.android.common.interval.view.IntervalListActivity"/>
+		<activity android:name="com.endomondo.android.common.interval.view.IntervalItemActivity" android:windowSoftInputMode="0x00000010"/>
+		<activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="0x000004A0"/>
+		<activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="0x000004A0"/>
+		<activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="0x000004A0"/>
+		<activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="0x000004A0"/>
+		<activity android:name="com.mopub.mobileads.RewardedMraidActivity" android:configChanges="0x000004A0"/>
+		<activity android:name="com.rfm.sdk.HTMLBrowserView" android:configChanges="0x00000080"/>
+		<activity android:name="com.rfm.sdk.MraidVideoPlayerActivity" android:configChanges="0x000004A0"/>
+		<activity android:name="com.endomondo.android.common.workout.personalbest.PBInterstitialActivity"/>
+		<activity android:name="com.endomondo.android.common.privateuser.PrivateUserActivity"/>
+		<activity android:theme="@7F1100CD" android:name="com.endomondo.android.common.tracker.zoneswitch.ZoneSwitchActivity"/>
+		<activity android:name="com.endomondo.android.common.navigation.NavigationActivity" android:launchMode="1"/>
+		<activity android:name="com.endomondo.android.common.profile.ProfileActivity"/>
+		<service android:name="com.endomondo.android.common.workout.WorkoutService" android:exported="false"/>
+		<service android:name="com.endomondo.android.common.accessory.AccessoryService" android:exported="false"/>
+		<service android:name="com.endomondo.android.common.accessory.connect.btle.BtLeService" android:exported="false"/>
+		<service android:name="com.endomondo.android.common.accessory.connect.bt.BtService" android:exported="false"/>
+		<service android:name="com.endomondo.android.common.workout.upload.UploadService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+		<service android:name="com.endomondo.android.common.wear.samsung.gears.SamsungGearMessageService"/>
+		<receiver android:name="com.endomondo.android.common.workout.stats.weekly.WeeklyStatsAlarmReceiver" android:enabled="true"/>
+		<receiver android:name="com.endomondo.android.common.social.share.photosharing.PhotoShareReceiver" android:enabled="true"/>
+		<receiver android:name="com.endomondo.android.common.generic.AutoStart">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+		</receiver>
+		<meta-data android:name="AccessoryServicesLocation" android:value="/res/xml/accessoryservices.xml"/>
+		<meta-data android:name="com.google.android.wearable.beta.app" android:resource="@7F130002"/>
+		<service android:name="com.endomondo.android.common.wear.android.WearService" android:exported="true">
+			<intent-filter>
+				<action android:name="com.google.android.gms.wearable.DATA_CHANGED"/>
+				<action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED"/>
+				<action android:name="com.google.android.gms.wearable.CAPABILITY_CHANGED"/>
+				<action android:name="com.google.android.gms.wearable.CHANNEL_EVENT"/>
+				<data android:scheme="wear" android:host="*"/>
+			</intent-filter>
+		</service>
+		<service android:name="com.endomondo.android.common.tracker.CountDownService" android:enabled="true" android:exported="false"/>
+		<meta-data android:name="io.fabric.ApiKey" android:value="e87ab368a1f1f0ea920023f59ca0ba89908dc451"/>
+		<receiver android:name="com.samsung.android.sdk.accessory.RegisterUponInstallReceiver">
+			<intent-filter>
+				<action android:name="com.samsung.accessory.action.REGISTER_AGENT"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.samsung.android.sdk.accessory.ServiceConnectionIndicationBroadcastReceiver">
+			<intent-filter>
+				<action android:name="com.samsung.accessory.action.SERVICE_CONNECTION_REQUESTED"/>
+			</intent-filter>
+		</receiver>
+		<meta-data android:name="GearAppType" android:value="wgt"/>
+		<provider android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer" android:exported="false" android:multiprocess="true" android:authorities="com.endomondo.android.lifecycle-trojan"/>
+		<activity android:theme="@android:01030010" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true"/>
+		<service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true"/>
+		<activity android:theme="@android:01030010" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+		<activity android:name="com.facebook.CustomTabMainActivity"/>
+		<activity android:name="com.facebook.CustomTabActivity"/>
+		<provider android:name="com.facebook.marketing.internal.MarketingInitProvider" android:exported="false" android:authorities="com.endomondo.android.MarketingInitProvider"/>
+		<provider android:name="com.facebook.internal.FacebookInitProvider" android:exported="false" android:authorities="com.endomondo.android.FacebookInitProvider"/>
+		<receiver android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver" android:exported="false">
+			<intent-filter>
+				<action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+			</intent-filter>
+		</receiver>
+		<provider android:name="com.crashlytics.android.CrashlyticsInitProvider" android:exported="false" android:authorities="com.endomondo.android.crashlyticsinitprovider" android:initOrder="90"/>
+	</application>
+</manifest>

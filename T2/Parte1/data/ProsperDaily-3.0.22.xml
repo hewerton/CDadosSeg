@@ -1,0 +1,163 @@
+<?xml version="1.0" ?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="139" android:versionName="3.0.22" package="com.billguard.android" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="22"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="22"/>
+	<uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+	<uses-feature android:name="android.hardware.location.network" android:required="false"/>
+	<compatible-screens>
+		<screen android:screenSize="200" android:screenDensity="120"/>
+		<screen android:screenSize="200" android:screenDensity="160"/>
+		<screen android:screenSize="200" android:screenDensity="240"/>
+		<screen android:screenSize="200" android:screenDensity="320"/>
+		<screen android:screenSize="200" android:screenDensity="480"/>
+		<screen android:screenSize="300" android:screenDensity="120"/>
+		<screen android:screenSize="300" android:screenDensity="160"/>
+		<screen android:screenSize="300" android:screenDensity="240"/>
+		<screen android:screenSize="300" android:screenDensity="320"/>
+		<screen android:screenSize="300" android:screenDensity="420"/>
+		<screen android:screenSize="300" android:screenDensity="480"/>
+		<screen android:screenSize="300" android:screenDensity="560"/>
+		<screen android:screenSize="300" android:screenDensity="640"/>
+	</compatible-screens>
+	<permission android:name="com.billguard.android.permission.C2D_MESSAGE" android:protectionLevel="0x00000002"/>
+	<uses-permission android:name="com.billguard.android.permission.C2D_MESSAGE"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<application android:theme="@7F0C00A2" android:label="@7F0900B1" android:icon="@7F02016F" android:name="com.billguard.BGApplication" android:allowBackup="false">
+		
+;
+
+		<activity android:theme="@7F0C010A" android:name="com.billguard.activity.MainActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<data android:scheme="billguard"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F0C0109" android:name="com.billguard.activity.DashboardActivity" android:launchMode="2" android:windowSoftInputMode="0x00000020"/>
+		<activity android:name="com.billguard.activity.TestActivity" android:exported="false">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="com.billguard.activity.FragmentTestActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.FragmentWithoutActionBarTestActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.AddCardActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+		</activity>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.SettingsActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.InboxActivity" android:windowSoftInputMode="0x00000020"/>
+		<activity android:theme="@7F0C0006" android:name="com.billguard.activity.NotificationsActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.PrivacyPolicyWebViewActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.WebViewActivity"/>
+		<activity android:theme="@7F0C000C" android:name="com.billguard.activity.TxnDetailsActivity" android:windowSoftInputMode="0x00000020"/>
+		<activity android:theme="@7F0C000C" android:name="com.billguard.activity.ExperianAlertDetailsActivity" android:windowSoftInputMode="0x00000020"/>
+		<activity android:theme="@7F0C000C" android:name="com.billguard.activity.IdAlertDetailsActivity" android:windowSoftInputMode="0x00000020"/>
+		<activity android:theme="@7F0C0010" android:name="com.billguard.activity.EditTxnCategoryActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.AllCategoriesListActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.PastChargesActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.SecretMenuActivity" android:windowSoftInputMode="0x00000002"/>
+		<activity android:theme="@7F0C0006" android:name="com.billguard.activity.PendingTxnListActivity"/>
+		<activity android:theme="@7F0C0006" android:name="com.billguard.activity.FlagChargeActivity" android:windowSoftInputMode="0x00000020"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.PasscodeUnlockActivity" android:launchMode="3"/>
+		<activity android:theme="@7F0C0006" android:name="com.billguard.activity.PasscodeSettingsActivity"/>
+		<activity android:theme="@7F0C015B" android:name="com.billguard.activity.PasscodeSetupActivity" android:windowSoftInputMode="0x00000002"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.RecurringGroupsListActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.RecurringGroupTxnListActivity"/>
+		<activity android:theme="@7F0C0009" android:name="com.billguard.activity.DowntimeAnnouncementActivity" android:launchMode="2"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.SpendAnalyticsActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.SACategoryViewActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.SALocationViewActivity"/>
+		<activity android:theme="@7F0C000C" android:name="com.billguard.activity.PCDetailsActivity"/>
+		<activity android:theme="@7F0C000C" android:name="com.billguard.activity.PMIDPCDetailsActivity"/>
+		<activity android:theme="@7F0C0010" android:name="com.billguard.activity.ExperianRenewActivity" android:windowSoftInputMode="0x00000020"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.ExperianExtraInfoBrowserActivity" android:exported="false">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<action android:name="android.intent.action.VIEW"/>
+				<data android:scheme="billguard.link"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F0C0010" android:name="com.billguard.activity.ExperianAlertResolutionActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.idp.EnrollmentActivity"/>
+		<activity android:theme="@7F0C00E7" android:name="com.billguard.activity.idp.CyberAgentActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.SubscribeAndUpgradeActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.MySubscriptionActivity"/>
+		<activity android:theme="@7F0C015B" android:name="com.billguard.activity.IDPResolutionCenterActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.WelcomeToPremiumActivity" android:windowSoftInputMode="0x00000003"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.ChangePaymentMethodActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.RequestLoanActivity"/>
+		<activity android:theme="@7F0C0102" android:label="Prosper" android:name="com.prosper.widget.ui.ProsperActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.ExportTransactionsActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.ProsperMigrationActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.PrivacyAndTermActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.UserLoanActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.OnboardingActivity"/>
+		<activity android:theme="@7F0C00A3" android:name="com.billguard.activity.StatementsActivity"/>
+		<activity android:theme="@7F0C00FA" android:name="com.billguard.activity.AddSecondAccountActivity"/>
+		<meta-data android:name="com.crashlytics.ApiKey" android:value="32bce281bcd07516e6872cc066c29e2449cddb09"/>
+		<meta-data android:name="com.google.android.gms.version" android:value="@7F0D0012"/>
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="@7F09020F"/>
+		<meta-data android:name="AdjustAppToken" android:value="k3c4g95mspx7"/>
+		<meta-data android:name="AdjustLogLevel" android:value="info"/>
+		<meta-data android:name="AdjustEnvironment" android:value="@7F090099"/>
+		<service android:name="com.billguard.services.BackgroundService" android:exported="false"/>
+		<service android:name="com.billguard.services.ItemPollingService" android:exported="false"/>
+		<receiver android:name="com.billguard.services.BootCompletedReceiver" android:enabled="true" android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.billguard.services.BackgroundService$AlarmReceiver"/>
+		<receiver android:name="com.tapreason.sdk.TapReasonMultipleInstallReferrerBroadcastReceiver" android:exported="true">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.tapreason.sdk.TapReasonInstallReferrerBroadcastReceiver" android:exported="false">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.adjust.sdk.ReferrerReceiver" android:exported="false">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER"/>
+			</intent-filter>
+		</receiver>
+		<service android:name="com.google.analytics.tracking.android.CampaignTrackingService"/>
+		<receiver android:name="com.billguard.services.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+				<action android:name="com.google.android.c2dm.intent.GCM_RECEIVED_ACTION"/>
+				<category android:name="com.billguard"/>
+			</intent-filter>
+		</receiver>
+		<service android:name="com.billguard.services.GcmNotificationService"/>
+		<service android:name="com.billguard.services.GcmRegistrationService"/>
+		<activity android:theme="@android:0103000B" android:name="com.tapreason.view.base.TapReasonActivity" android:excludeFromRecents="true" android:launchMode="1"/>
+		<service android:name="com.placer.client.PlacerService" android:enabled="true" android:exported="false" android:process=":background"/>
+		<receiver android:name="com.placer.client.PlacerReceiver" android:enabled="true" android:exported="true" android:process=":background">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+		</receiver>
+		<activity android:theme="@7F0C0144" android:label="@7F09045E" android:name="com.prosper.widget.ui.DebugActivity"/>
+		<activity android:theme="@7F0C00F7" android:name="io.intercom.android.sdk.activities.MainActivity" android:exported="false" android:launchMode="1" android:configChanges="0x00000480" android:windowSoftInputMode="0x00000011"/>
+		<activity android:theme="@7F0C00F6" android:name="io.intercom.android.sdk.attachments.AttachmentActivity" android:exported="false" android:configChanges="0x00000480" android:windowSoftInputMode="0x00000011"/>
+		<activity android:theme="@7F0C00F6" android:name="io.intercom.android.sdk.conversation.lightbox.LightboxActivity" android:exported="false" android:configChanges="0x00000480" android:windowSoftInputMode="0x00000002"/>
+		<activity android:name="io.intercom.android.sdk.activities.TestActivity" android:exported="false"/>
+	</application>
+</manifest>

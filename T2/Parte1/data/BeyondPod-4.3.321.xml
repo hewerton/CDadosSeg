@@ -1,0 +1,354 @@
+<?xml version="1.0" ?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="40333" android:versionName="4.3.321" android:installLocation="0" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" package="mobi.beyondpod" platformBuildVersionCode="29" platformBuildVersionName="10">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29"/>
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+	<uses-permission android:name="mobi.beyondpod.permission.C2D_MESSAGE"/>
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+	<supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:resizeable="true" android:xlargeScreens="true"/>
+	<uses-feature android:name="android.hardware.wifi" android:required="false"/>
+	<uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+	<uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+	<application android:theme="@7F110211" android:label="@7F100099" android:icon="@7F08017C" android:name="mobi.beyondpod.evo.BeyondPodApplicationEvo" android:backupAgent="mobi.beyondpod.rsscore.helpers.BPBackupAgentHelper" android:allowBackup="false" android:logo="@7F0800F2" android:largeHeap="true" android:supportsRtl="true" android:fullBackupContent="@7F130006" android:usesCleartextTraffic="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true">
+		<activity android:theme="@7F11021D" android:name="mobi.beyondpod.ui.views.Splash">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER"/>
+				<action android:name="android.intent.action.MAIN"/>
+			</intent-filter>
+		</activity>
+		<activity android:label="@7F10042C" android:name="mobi.beyondpod.ui.settings.SettingsView"/>
+		<activity android:label="@7F10034A" android:name="mobi.beyondpod.ui.dialogs.PreviewPlayer" android:launchMode="2" android:configChanges="0x000004A0" android:hardwareAccelerated="true"/>
+		<activity android:theme="@android:01030010" android:label="" android:name="mobi.beyondpod.ui.dialogs.ExternalPlayerStarterActivity" android:launchMode="1" android:configChanges="0x000004A0"/>
+		<activity android:theme="@7F11021A" android:name="mobi.beyondpod.ui.views.MasterView" android:launchMode="2" android:hardwareAccelerated="true">
+			<intent-filter>
+				<action android:name="mobi.beyondpod.action.VIEW_MASTER"/>
+				<action android:name="android.intent.action.SEARCH"/>
+				<action android:name="com.google.android.gms.actions.SEARCH_ACTION"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:scheme="itpc"/>
+				<data android:scheme="pcast"/>
+				<data android:scheme="feed"/>
+				<data android:scheme="rss"/>
+				<data android:scheme="beyondpod"/>
+			</intent-filter>
+			<intent-filter android:label="Subscribe on Android">
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:pathPattern="/.*\..*/.*"/>
+				<data android:host="subscribeonandroid.com"/>
+				<data android:host="www.subscribeonandroid.com"/>
+				<data android:scheme="http"/>
+				<data android:scheme="https"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="http" android:host="*" android:pathPattern="/.*.xml"/>
+				<data android:scheme="http" android:host="*" android:pathPattern="/.*.rss"/>
+				<data android:scheme="http" android:host="*" android:pathPattern="/.*podcast.*"/>
+				<data android:scheme="http" android:host="*" android:pathPattern="/.*Podcast.*"/>
+				<data android:scheme="http" android:host="*" android:pathPattern="/.*rss.*"/>
+				<data android:scheme="http" android:host="*" android:pathPattern="/.*RSS.*"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="http"/>
+				<data android:scheme="https"/>
+				<data android:host="feeds.feedburner.com"/>
+				<data android:host="feedproxy.google.com"/>
+				<data android:host="feeds2.feedburner.com"/>
+				<data android:host="feedsproxy.google.com"/>
+				<data android:host="gdata.youtube.com"/>
+				<data android:host="feeds.twit.tv"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:mimeType="text/xml" android:scheme="http"/>
+				<data android:mimeType="application/rss+xml" android:scheme="http"/>
+				<data android:mimeType="application/atom+xml" android:scheme="http"/>
+			</intent-filter>
+			<intent-filter android:label="@7F10009A">
+				<action android:name="android.intent.action.SEND"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:mimeType="text/plain"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+			<meta-data android:name="android.app.searchable" android:resource="@7F130013"/>
+		</activity>
+		<activity android:name="mobi.beyondpod.ui.views.HtmlViewActivity" android:launchMode="2" android:configChanges="0x000004A0" android:hardwareAccelerated="true">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<action android:name="mobi.beyondpod.action.VIEW_HTML_VIEW"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="mobi.beyondpod.ui.views.OAuthLoginActivity" android:launchMode="1" android:configChanges="0x000004A0" android:hardwareAccelerated="true"/>
+		<activity android:name="mobi.beyondpod.ui.fragments.LoginActivity" android:launchMode="1" android:configChanges="0x000004A0" android:hardwareAccelerated="true">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="beyondpod" android:host="feedlylogin"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F110216" android:name="mobi.beyondpod.ui.views.contentview.FeedItemContentViewPager" android:configChanges="0x000004A0" android:hardwareAccelerated="true"/>
+		<activity android:label="Feed Properties" android:name="mobi.beyondpod.ui.views.feedsettings.FeedPropertiesView" android:launchMode="2" android:configChanges="0x000004A0"/>
+		<activity android:theme="@7F110214" android:label="@7F10045E" android:name="mobi.beyondpod.ui.views.UpdateAndDownloadQueueActivityDialog" android:launchMode="2"/>
+		<activity android:name="mobi.beyondpod.ui.views.FileViewActivity" android:launchMode="2" android:configChanges="0x000004A0"/>
+		<activity android:label="@7F1003A9" android:name="mobi.beyondpod.ui.views.SmartPlaylistEditorView" android:launchMode="2" android:configChanges="0x000004A0" android:windowSoftInputMode="0x00000003"/>
+		<activity android:theme="@7F110214" android:label="@7F10048A" android:name="mobi.beyondpod.ui.dialogs.WidgetActionPicker" android:taskAffinity="" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="2"/>
+		<activity android:theme="@7F11021C" android:name="mobi.beyondpod.ui.views.ShortcutHandler" android:excludeFromRecents="true" android:launchMode="2" android:noHistory="true">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<action android:name="android.intent.action.SEARCH"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F110214" android:label="@7F1002AB" android:name="mobi.beyondpod.ui.dialogs.MoveFilesDialog" android:taskAffinity="" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="2" android:configChanges="0x000004A0"/>
+		<activity android:theme="@7F110214" android:label="@7F100432" android:name="mobi.beyondpod.ui.dialogs.WidgetPreferences" android:clearTaskOnLaunch="true" android:excludeFromRecents="true">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F11021C" android:label="@7F1000A3" android:name="mobi.beyondpod.ui.dialogs.ApplicationErrorMessageDialog" android:launchMode="2"/>
+		<activity android:label="@7F100309" android:name="mobi.beyondpod.ui.dialogs.GoogleReaderLoginDialog" android:launchMode="1"/>
+		<activity android:theme="@7F110214" android:label="@7F1003AF" android:name="mobi.beyondpod.ui.dialogs.DisableGoogleReaderDialog" android:launchMode="2"/>
+		<activity android:name="mobi.beyondpod.ui.dialogs.ScheduledUpdatesActivity" android:launchMode="1"/>
+		<activity android:name="mobi.beyondpod.ui.dialogs.CategoryPropertiesActivity" android:launchMode="1" android:windowSoftInputMode="0x00000003"/>
+		<activity android:theme="@7F11021B" android:label="@7F1002BB" android:name="mobi.beyondpod.ui.views.MovieView" android:launchMode="1" android:configChanges="0x000004A0" android:hardwareAccelerated="true"/>
+		<activity android:label="@7F100069" android:name="mobi.beyondpod.ui.views.impexp.AddFeedView" android:launchMode="2">
+			<intent-filter>
+				<action android:name="android.intent.action.SEARCH"/>
+			</intent-filter>
+			<meta-data android:name="android.app.searchable" android:resource="@7F130007"/>
+		</activity>
+		<activity android:name="mobi.beyondpod.ui.views.impexp.PublisherResultsView" android:launchMode="2"/>
+		<activity android:label="@7F10006E" android:name="mobi.beyondpod.ui.views.impexp.ImportFeedsView" android:launchMode="2" android:configChanges="0x000004A0">
+			<intent-filter>
+				<action android:name="android.intent.action.SEARCH"/>
+			</intent-filter>
+			<meta-data android:name="android.app.searchable" android:resource="@7F13000A"/>
+		</activity>
+		<activity android:name="mobi.beyondpod.ui.views.publishedepisodes.FeedPreviewActivity" android:launchMode="2" android:configChanges="0x000004A0"/>
+		<activity android:theme="@7F110214" android:label="@7F1000BB" android:name="mobi.beyondpod.ui.dialogs.BackupRestoreActivity" android:launchMode="1" android:configChanges="0x000004A0">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<category android:name="android.intent.category.OPENABLE"/>
+				<data android:mimeType="*/*" android:scheme="file" android:host="*"/>
+				<data android:mimeType="*/*" android:scheme="http" android:host="*"/>
+				<data android:mimeType="*/*" android:scheme="https" android:host="*"/>
+				<data android:mimeType="*/*" android:scheme="content" android:host="*"/>
+				<data android:pathPattern=".*\.bpbak"/>
+				<data android:pathPattern=".*\..*\.bpbak"/>
+				<data android:pathPattern=".*\..*\..*\.bpbak"/>
+				<data android:pathPattern=".*\..*\..*\..*\.bpbak"/>
+				<data android:pathPattern=".*\..*\..*\..*\..*\.bpbak"/>
+				<data android:pathPattern=".*\..*\..*\..*\..*\..*\.bpbak"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<category android:name="android.intent.category.OPENABLE"/>
+				<data android:mimeType="application/bpbak"/>
+				<data android:mimeType="application/x-bpbak"/>
+				<data android:mimeType="application/octet-stream" android:scheme="content"/>
+				<data android:mimeType="application/zip" android:scheme="content"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="http"/>
+				<data android:host="*"/>
+				<data android:pathPattern=".*\.bpbak"/>
+				<data android:pathPattern=".*\..*\.bpbak"/>
+				<data android:pathPattern=".*\..*\..*\.bpbak"/>
+				<data android:pathPattern=".*\..*\..*\..*\.bpbak"/>
+				<data android:pathPattern=".*\..*\..*\..*\..*\.bpbak"/>
+				<data android:pathPattern=".*\..*\..*\..*\..*\..*\.bpbak"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:scheme="http"/>
+				<data android:host="*"/>
+				<data android:mimeType="application/*"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:mimeType="application/octet-stream" android:scheme="content" android:host="*"/>
+				<data android:pathPattern="/.*\/attachments/.*"/>
+				<data android:pathPattern="/.*\/.*\/attachments/.*"/>
+				<data android:pathPattern="/.*\/.*\/.*\/attachments/.*"/>
+				<data android:pathPattern="/.*\/.*\/.*\/.*\/attachments/.*"/>
+				<data android:pathPattern="/.*\/.*\/.*\/.*\/.*\/attachments/.*"/>
+				<data android:pathPattern="/.*\/.*\/.*\/.*\/.*\/.*\/attachments/.*"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data android:mimeType="text/*" android:scheme="file" android:host="*"/>
+				<data android:pathPattern="/.*\.opml"/>
+				<data android:pathPattern="/.*\..*\.opml"/>
+				<data android:pathPattern="/.*\..*\..*\.opml"/>
+				<data android:pathPattern="/.*\..*\..*\..*\.opml"/>
+				<data android:pathPattern="/.*\..*\..*\..*\..*\.opml"/>
+				<data android:pathPattern="/.*\..*\..*\..*\..*\..*\.opml"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F110214" android:name="mobi.beyondpod.ui.dialogs.CrossDeviceSyncLoginActivity" android:launchMode="1" android:configChanges="0x000004A0"/>
+		<activity android:theme="@7F110218" android:name="mobi.beyondpod.ui.views.onboarding.GuidedTour"/>
+		<activity android:theme="@7F110218" android:name="mobi.beyondpod.ui.views.onboarding.startup.FirstRun" android:configChanges="0x000004A0"/>
+		<activity android:theme="@android:0103000F" android:name="com.google.android.gms.ads.AdActivity" android:exported="false" android:configChanges="0x00000FB0"/>
+		<receiver android:name="com.google.android.gms.analytics.AnalyticsReceiver" android:enabled="true" android:exported="false">
+			<intent-filter>
+				<action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+			</intent-filter>
+		</receiver>
+		<service android:name="com.google.android.gms.analytics.AnalyticsService" android:enabled="true" android:exported="false"/>
+		<receiver android:name="com.google.android.gms.analytics.CampaignTrackingReceiver" android:exported="true">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER"/>
+			</intent-filter>
+		</receiver>
+		<service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+		<service android:name="mobi.beyondpod.services.player.MediaPlaybackService" android:exported="true"/>
+		<service android:name="mobi.beyondpod.services.player.MediaPlaybackJobIntent" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="true"/>
+		<service android:name="mobi.beyondpod.services.scheduler.SchedulingService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+		<service android:name="mobi.beyondpod.services.download.DownloadHolderService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+		<service android:name="mobi.beyondpod.evo.GcmIntentService"/>
+		<service android:name="mobi.beyondpod.services.auto.BeyondPodMediaBrowserService" android:enabled="@7F050003" android:exported="true">
+			<intent-filter>
+				<action android:name="android.media.browse.MediaBrowserService"/>
+			</intent-filter>
+			<meta-data android:name="com.google.android.gms.car.notification.SmallIcon" android:resource="@7F0802B8"/>
+		</service>
+		<meta-data android:name="com.google.android.gms.car.application.theme" android:resource="@7F1100F4"/>
+		<meta-data android:name="com.google.android.gms.car.application" android:resource="@7F130005"/>
+		<receiver android:name="mobi.beyondpod.services.scheduler.ScheduledEventReceiver">
+			<intent-filter>
+				<action android:name="mobi.beyondpod.scheduling.SCHEDULED_TASK"/>
+				<data android:scheme="bpscheduler"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="mobi.beyondpod.services.scheduler.EnvironmentChangeReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+				<action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="mobi.beyondpod.services.auto.CarModeReceiver" android:enabled="true" android:exported="true">
+			<intent-filter>
+				<action android:name="android.app.action.ENTER_CAR_MODE"/>
+				<action android:name="android.app.action.EXIT_CAR_MODE"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="mobi.beyondpod.services.scheduler.CommandReceiver" android:enabled="true" android:exported="true">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<action android:name="mobi.beyondpod.command.UPDATE_SMART_PLAY"/>
+				<action android:name="mobi.beyondpod.command.START_SMART_PLAY"/>
+				<action android:name="mobi.beyondpod.command.UPDATE_CATEGORY"/>
+				<action android:name="mobi.beyondpod.command.PLAY"/>
+				<action android:name="mobi.beyondpod.command.PAUSE"/>
+				<action android:name="mobi.beyondpod.command.PLAY_PAUSE"/>
+				<action android:name="mobi.beyondpod.command.PLAY_NEXT"/>
+				<action android:name="mobi.beyondpod.command.PLAY_PREVIOUS"/>
+				<action android:name="mobi.beyondpod.command.SKIP_FORWARD"/>
+				<action android:name="mobi.beyondpod.command.SKIP_BACKWARD"/>
+				<action android:name="mobi.beyondpod.command.SKIP_TO_END"/>
+				<action android:name="mobi.beyondpod.command.SET_PLAYBACK_SPEED_NORMAL"/>
+				<action android:name="mobi.beyondpod.command.SET_PLAYBACK_SPEED_1"/>
+				<action android:name="mobi.beyondpod.command.SET_PLAYBACK_SPEED_2"/>
+				<action android:name="mobi.beyondpod.command.SIMULATE_INVALID_READER_TOKEN"/>
+				<action android:name="mobi.beyondpod.command.START_SYNC"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="mobi.beyondpod.evo.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+				<category android:name="mobi.beyondpod"/>
+			</intent-filter>
+		</receiver>
+		<provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="mobi.beyondpod.evo.BackupRestoreFragment" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@7F130008"/>
+		</provider>
+		<provider android:name="mobi.beyondpod.htmlbuilder.FeedHtmlContentProvider" android:authorities="beyondpodevo"/>
+		<provider android:name="mobi.beyondpod.ui.evosearch.RepositorySearchProvider" android:authorities="mobi.beyondpod.ui.evosearch.RepositorySearchProvider"/>
+		<receiver android:label="BeyondPod (resizable)" android:name="mobi.beyondpod.services.player.MediaAppWidgetProvider">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+			</intent-filter>
+			<meta-data android:name="android.appwidget.provider" android:resource="@7F130002"/>
+		</receiver>
+		<receiver android:name="mobi.beyondpod.services.player.BluetoothEventReceiver" android:enabled="true" android:exported="true">
+			<intent-filter android:priority="990">
+				<action android:name="android.bluetooth.adapter.action.CONNECTION_STATE_CHANGED"/>
+				<action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>
+				<action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>
+				<action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:label="BeyondPod (large)" android:name="mobi.beyondpod.services.player.MediaAppWidgetProviderXLarge">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+			</intent-filter>
+			<meta-data android:name="android.appwidget.provider" android:resource="@7F130004"/>
+		</receiver>
+		<receiver android:name="mobi.beyondpod.services.player.MediaAppWidgetProviderLockscreen">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+			</intent-filter>
+			<meta-data android:name="android.appwidget.provider" android:resource="@7F130003"/>
+		</receiver>
+		<receiver android:name="mobi.beyondpod.services.player.MediaButtonIntentReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.MEDIA_BUTTON"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="mobi.beyondpod.ui.core.customtabs.ShareBroadcastReceiver"/>
+		<meta-data android:name="com.google.android.gms.version" android:value="@7F0A0027"/>
+		<meta-data android:name="com.sec.android.support.multiwindow" android:value="true"/>
+		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:resource="@7F07005C"/>
+		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:resource="@7F07005B"/>
+		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:resource="@7F07005E"/>
+		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:resource="@7F07005D"/>
+		<meta-data android:name="com.crashlytics.ApiKey" android:value="b87c7b847ca0cba3f07d91bf97b8a67ba78a1d3f"/>
+		<receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" android:exported="false"/>
+		<service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService"/>
+		<service android:name="com.google.android.gms.cast.framework.ReconnectionService"/>
+		<service android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+		<activity android:theme="@android:01030010" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+		<activity android:theme="@7F110119" android:label="" android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity" android:exported="false"/>
+		<provider android:name="com.crashlytics.android.CrashlyticsInitProvider" android:exported="false" android:authorities="mobi.beyondpod.crashlyticsinitprovider" android:initOrder="100"/>
+	</application>
+</manifest>

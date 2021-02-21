@@ -1,0 +1,242 @@
+<?xml version="1.0" ?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="720" android:versionName="4.0.9" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" package="com.dashlabs.dash.android" platformBuildVersionCode="720" platformBuildVersionName="4.0.9">
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="26"/>
+	<permission android:label="@7F1000A9" android:name="com.dashlabs.dash.permission.DASH_BROADCAST" android:protectionLevel="0x00000000" android:description="@7F1000A8"/>
+	<permission android:name="com.dashlabs.dash.android.permission.MAPS_RECEIVE" android:protectionLevel="0x00000002"/>
+	<uses-feature android:name="android.hardware.bluetooth" android:required="true"/>
+	<uses-feature android:name="android.hardware.camera" android:required="false"/>
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+	<uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+	<uses-feature android:name="android.hardware.location.network" android:required="false"/>
+	<uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+	<uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.CAMERA"/>
+	<uses-permission android:name="android.permission.FLASHLIGHT"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+	<uses-permission android:name="com.dashlabs.dash.android.permission.MAPS_RECEIVE"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="com.dashlabs.dash.permission.DASH_BROADCAST"/>
+	<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+	<uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.READ_CONTACTS"/>
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+	<uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+	<uses-permission android:name="android.permission.READ_SYNC_STATS"/>
+	<uses-permission android:name="li.vin.permission.VINLI_DEVICE_SERVICE"/>
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+	<application android:theme="@7F1100D4" android:label="@7F10006C" android:icon="@7F08013E" android:name="com.dashlabs.dash.android.DashApplication" android:allowBackup="true" android:supportsRtl="true" android:appComponentFactory="android.support.v4.app.CoreComponentFactory">
+		<uses-library android:name="com.google.android.maps" android:required="false"/>
+		<activity android:theme="@7F11011D" android:label="@7F10006C" android:name="com.dashlabs.dash.android.ui.SplashActivity" android:launchMode="1" android:screenOrientation="1" android:configChanges="0x000000A0">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:scheme="http" android:host="dash.by" android:path="/android"/>
+			</intent-filter>
+		</activity>
+		<activity android:theme="@7F1100D7" android:label="@7F10006C" android:name="com.dashlabs.dash.android.ui.MainActivity" android:launchMode="2" android:screenOrientation="1"/>
+		<activity android:label="@7F1003E1" android:name="com.dashlabs.dash.android.ui.settings.ObdDriveSettingsActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:label="@7F1003EF" android:name="com.dashlabs.dash.android.ui.settings.UnitPreferencesActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:label="@7F1003EF" android:name="com.dashlabs.dash.android.ui.account.AccountLinkActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:label="@7F1003EF" android:name="com.dashlabs.dash.android.ui.account.AccountSelectActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:name="com.dashlabs.dash.android.ui.settings.DrivingGaugesSettingsActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:name="com.dashlabs.dash.android.ui.settings.BondedDeviceSettingsActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.settings.ObdDriveSettingsActivity"/>
+		</activity>
+		<activity android:label="@7F1003E2" android:name="com.dashlabs.dash.android.ui.WebActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:label="@7F10006C" android:name="com.dashlabs.dash.android.ui.diagnosis.GooglePlayServicesDiagnosisActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:label="@7F10006C" android:name="com.dashlabs.dash.android.ui.driving.DrivingActivity" android:screenOrientation="2" android:configChanges="0x00000480">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:theme="@7F1100D5" android:label="@7F10048B" android:name="com.dashlabs.dash.android.ui.user.UserProfileActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:theme="@7F1100D8" android:name="com.dashlabs.dash.android.ui.OnBoardingActivity" android:launchMode="1" android:screenOrientation="1"/>
+		<activity android:theme="@7F1100D5" android:name="com.dashlabs.dash.android.ui.vehicle.profile.VehicleProfileActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000002">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:name="com.dashlabs.dash.android.ui.vehicle.health.VehicleHealthActivity" android:launchMode="1" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:name="com.dashlabs.dash.android.ui.vehicle.health.MaintenanceItemDetailActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.vehicle.health.VehicleHealthActivity"/>
+		</activity>
+		<activity android:name="com.dashlabs.dash.android.ui.vehicle.health.SelectMaintenanceTypeActivity" android:screenOrientation="1">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.vehicle.health.VehicleHealthActivity"/>
+		</activity>
+		<activity android:name="com.dashlabs.dash.android.ui.vehicle.health.CreateMaintenanceItemActivity" android:screenOrientation="1"/>
+		<activity android:theme="@7F1100D5" android:name="com.dashlabs.dash.android.ui.drive.detail.DriveDetailActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ui.MainActivity"/>
+		</activity>
+		<activity android:name="com.dashlabs.dash.android.ui.StorageStatusActivity" android:launchMode="2" android:screenOrientation="1">
+			<intent-filter>
+				<action android:name="com.dashlabs.dash.android.STORAGE_STATUS"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="com.dashlabs.dash.android.ui.auth.AuthenticationActivity" android:excludeFromRecents="true" android:windowSoftInputMode="0x00000002"/>
+		<activity android:theme="@7F1100D8" android:name="com.dashlabs.dash.android.ui.install.InstallationGuideActivity"/>
+		<activity android:name="com.dashlabs.dash.android.ui.DeepLinkHubActivity">
+			<intent-filter>
+				<data android:scheme="dashlabs" android:host="addvehicle"/>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+			</intent-filter>
+			<intent-filter>
+				<data android:scheme="dashlabs" android:host="trips"/>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+			</intent-filter>
+			<intent-filter>
+				<data android:scheme="dashlabs" android:host="defaultvehicle"/>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+			</intent-filter>
+			<intent-filter>
+				<data android:scheme="dashlabs" android:host="monthlyemailoptout"/>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+			</intent-filter>
+			<intent-filter>
+				<data android:scheme="dashlabs" android:host="driving"/>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+			</intent-filter>
+		</activity>
+		<service android:name="com.dashlabs.dash.android.service.NotificationIntentService" android:permission="com.dashlabs.dash.android.service.NotificationIntentService" android:exported="true">
+			<intent-filter>
+				<action android:name="com.dashlabs.dash.android.service.NotificationIntentService"/>
+			</intent-filter>
+		</service>
+		<service android:name="com.dashlabs.dash.android.storage.StorageService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:process=":remote">
+			<intent-filter>
+				<action android:name="com.dashlabs.dash.android.storage.StorageService"/>
+			</intent-filter>
+		</service>
+		<service android:name="com.dashlabs.dash.android.service.DashAccountService">
+			<intent-filter>
+				<action android:name="android.accounts.AccountAuthenticator"/>
+			</intent-filter>
+			<meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@7F130000"/>
+		</service>
+		<service android:name="com.dashlabs.dash.android.service.SyncService" android:exported="true" android:process=":remote">
+			<intent-filter>
+				<action android:name="android.content.SyncAdapter"/>
+			</intent-filter>
+			<meta-data android:name="android.content.SyncAdapter" android:resource="@7F130003"/>
+		</service>
+		<provider android:name="com.dashlabs.dash.android.storage.StorageProvider" android:exported="false" android:authorities="com.dashlabs.dash.android.provider" android:syncable="true"/>
+		<provider android:name="com.dashlabs.dash.android.cache.CacheContentProvider" android:exported="false" android:authorities="com.dashlabs.dash.android.cache.cachecontentprovider" android:syncable="false"/>
+		<provider android:name="android.support.v4.content.FileProvider" android:exported="false" android:authorities="com.dashlabs.dash.android.fileprovider" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@7F130002"/>
+		</provider>
+		<receiver android:name="com.dashlabs.dash.android.boot.BootReceiver" android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.dashlabs.dash.android.device.BluetoothConnectionReceiver" android:exported="true" android:process=":remote">
+			<intent-filter>
+				<action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>
+				<action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.google.android.gms.analytics.AnalyticsReceiver" android:enabled="true" android:exported="false">
+			<intent-filter>
+				<action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+			</intent-filter>
+		</receiver>
+		<service android:name="com.google.android.gms.analytics.AnalyticsService" android:enabled="true" android:exported="false"/>
+		<receiver android:name="com.google.android.gms.analytics.CampaignTrackingReceiver" android:exported="true">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.dashlabs.dash.android.service.ActivityTransitionReceiver" android:process=":remote"/>
+		<service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+		<service android:name="com.dashlabs.dash.android.service.fcm.DashFirebaseMessagingService">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT"/>
+			</intent-filter>
+		</service>
+		<meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@7F0801A9"/>
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDyLEvo7eICGZX20fkdEb4QmggumIdffgU"/>
+		<meta-data android:name="li.vin.client.id" android:value="54d22e42-7f6a-4e7b-af87-f22411f1ad3a"/>
+		<meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@7F10006C"/>
+		<meta-data android:name="com.google.android.gms.version" android:value="@7F0A000D"/>
+		<meta-data android:name="com.dashlabs.dash.android.passphrase" android:value="D4sh3rD4sh3r$"/>
+		<meta-data android:name="com.dashlabs.dash.android.ui.widget.DashGlideModule" android:value="GlideModule"/>
+		<service android:name="com.dashlabs.dash.android.service.AudioService"/>
+		<service android:name="com.dashlabs.dash.android.service.data.LoadDrivesService"/>
+		<service android:name="com.dashlabs.dash.android.service.remote.DrivingService" android:exported="false" android:process=":remote"/>
+		<service android:name="com.dashlabs.dash.android.service.remote.AutoConnectJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:process=":remote"/>
+		<service android:name="com.dashlabs.dash.android.service.remote.AutoConnectServiceCompat" android:exported="false" android:process=":remote"/>
+		<service android:name="com.dashlabs.dash.android.service.remote.ConnectJobService" android:exported="false" android:process=":remote"/>
+		<service android:name="com.dashlabs.dash.android.service.remote.ConnectServiceCompat" android:exported="false" android:process=":remote"/>
+		<service android:name="com.dashlabs.dash.android.service.remote.WifiSyncJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:process=":remote"/>
+		<service android:name="com.dashlabs.dash.android.service.remote.WifiSyncServiceCampt" android:exported="false" android:process=":remote"/>
+		<service android:name="com.dashlabs.dash.android.service.provider.MovementIntentService" android:exported="false" android:process=":remote"/>
+		<activity android:theme="@7F11023E" android:name="com.facebook.FacebookActivity" android:configChanges="0x000005B0"/>
+		<activity android:name="com.facebook.CustomTabActivity" android:exported="true"/>
+		<activity android:name="com.facebook.CustomTabMainActivity"/>
+		<service android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+		<activity android:theme="@android:01030010" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true"/>
+		<service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true"/>
+		<service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="true">
+			<intent-filter android:priority="-500">
+				<action android:name="com.google.firebase.MESSAGING_EVENT"/>
+			</intent-filter>
+		</service>
+		<provider android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer" android:exported="false" android:multiprocess="true" android:authorities="com.dashlabs.dash.android.lifecycle-trojan"/>
+		<service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false">
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+		</service>
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+			</intent-filter>
+		</receiver>
+		<service android:name="com.google.firebase.iid.FirebaseInstanceIdService" android:exported="true">
+			<intent-filter android:priority="-500">
+				<action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+			</intent-filter>
+		</service>
+		<provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.dashlabs.dash.android.firebaseinitprovider" android:initOrder="100"/>
+		<activity android:theme="@android:01030010" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+	</application>
+</manifest>

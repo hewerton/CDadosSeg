@@ -1,0 +1,179 @@
+<?xml version="1.0" ?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="310416" android:versionName="3.10.16.310416" android:installLocation="1" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" package="com.iconology.comics" platformBuildVersionCode="29" platformBuildVersionName="10">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29"/>
+	<uses-permission android:name="com.android.vending.BILLING"/>
+	<supports-screens android:largeScreens="true" android:xlargeScreens="true"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-feature android:name="android.hardware.location.network" android:required="false"/>
+	<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+	<uses-permission android:name="com.amazon.dcp.sso.permission.MANAGE_COR_PFM"/>
+	<application android:theme="@7F1201D2" android:label="@7F110075" android:icon="@7F0800D5" android:name="com.iconology.comics.app.ComixologyApp" android:allowBackup="false" android:hardwareAccelerated="true" android:largeHeap="true" android:networkSecurityConfig="@7F140000" android:appComponentFactory="android.support.v4.app.CoreComponentFactory">
+		<activity android:label="@7F110059" android:name="com.iconology.ui.store.cart.PurchaseConfirmationActivity" android:parentActivityName="com.iconology.ui.store.featured.FeaturedActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.iconology.ui.store.featured.FeaturedActivity"/>
+		</activity>
+		<activity android:label="@7F110063" android:name="com.iconology.ui.store.cart.ShoppingCartActivity" android:parentActivityName="com.iconology.ui.store.featured.FeaturedActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.iconology.ui.store.featured.FeaturedActivity"/>
+		</activity>
+		<meta-data android:name="MAPIsolateApplication" android:value="true"/>
+		<meta-data android:name="MAPEnvironment" android:value="prod"/>
+		<activity android:theme="@android:01030010" android:name="com.iconology.comics.purchasing.google.v3.GooglePurchaseFlowActivity" android:launchMode="1" android:screenOrientation="3" android:configChanges="0x000004B0"/>
+		<uses-library android:name="org.apache.http.legacy" android:required="false"/>
+		<meta-data android:name="android.max_aspect" android:value="2.100000"/>
+		<activity android:theme="@android:01030055" android:label="@7F110163" android:name="com.iconology.ui.navigation.RouterActivity" android:allowTaskReparenting="true">
+			<intent-filter android:label="@7F110163">
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:scheme="@7F1100A7"/>
+			</intent-filter>
+		</activity>
+		<activity android:label="@7F110057" android:name="com.iconology.auth.ui.LoginActivity"/>
+		<activity android:theme="@7F1201CE" android:name="com.iconology.catalog.list.CatalogListActivity" android:parentActivityName="com.iconology.ui.store.featured.FeaturedActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.iconology.ui.store.featured.FeaturedActivity"/>
+		</activity>
+		<activity android:name="com.iconology.ui.WebViewActivity" android:configChanges="0x00000480" android:parentActivityName="com.iconology.ui.store.featured.FeaturedActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.iconology.ui.store.featured.FeaturedActivity"/>
+		</activity>
+		<activity android:theme="@7F1201E6" android:label="@7F11004B" android:name="com.iconology.ui.about.AboutActivity"/>
+		<activity android:label="@7F110054" android:name="com.iconology.ui.feedback.FeedbackActivity"/>
+		<activity android:theme="@7F1201CE" android:name="com.iconology.catalog.list.PublisherDetailSeeAllListActivity"/>
+		<activity android:theme="@7F1201CE" android:label="@7F110058" android:name="com.iconology.ui.mybooks.MyBooksActivity"/>
+		<activity android:theme="@7F1201CE" android:label="@7F11004D" android:name="com.iconology.library.archive.ui.ArchivedBooksActivity"/>
+		<activity android:theme="@7F1201CE" android:label="@7F11004E" android:name="com.iconology.library.ui.CollectionActivity"/>
+		<activity android:theme="@7F1201D7" android:name="com.iconology.ui.reader.ComicReaderActivity" android:configChanges="0x000004B0"/>
+		<activity android:theme="@7F1201D6" android:label="@7F110062" android:name="com.iconology.ui.settings.SettingsActivity"/>
+		<activity android:theme="@7F1201CE" android:label="@7F11035B" android:name="com.iconology.ui.smartlists.SmartListsActivity"/>
+		<activity android:theme="@7F1201CE" android:label="@7F110051" android:name="com.iconology.catalog.creators.list.CreatorsListsActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+		</activity>
+		<activity android:theme="@7F1201CE" android:label="@7F110051" android:name="com.iconology.catalog.creators.detail.CreatorDetailActivity" android:parentActivityName="com.iconology.catalog.creators.list.CreatorsListsActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.iconology.catalog.creators.list.CreatorsListsActivity"/>
+		</activity>
+		<activity android:theme="@7F1201CE" android:label="@7F110053" android:name="com.iconology.ui.store.featured.FeaturedActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+		</activity>
+		<activity android:theme="@7F1201CE" android:label="@7F110055" android:name="com.iconology.catalog.genres.GenresActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+		</activity>
+		<activity android:theme="@7F1201CE" android:label="@7F110055" android:name="com.iconology.catalog.genres.GenreSeriesActivity" android:parentActivityName="com.iconology.catalog.genres.GenresActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.iconology.catalog.genres.GenresActivity"/>
+		</activity>
+		<activity android:name="com.iconology.ui.store.issues.IssueDetailActivity" android:parentActivityName="com.iconology.ui.store.featured.FeaturedActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.iconology.ui.store.featured.FeaturedActivity"/>
+		</activity>
+		<activity android:theme="@android:0103000A" android:name="com.iconology.ui.store.onboarding.OnboardingActivity"/>
+		<activity android:theme="@7F1201D7" android:name="com.iconology.ui.store.preview.IssuePreviewActivity" android:configChanges="0x000004B0"/>
+		<activity android:theme="@7F1201CE" android:label="@7F11005C" android:name="com.iconology.catalog.publishers.list.PublishersActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+		</activity>
+		<activity android:theme="@7F1201CE" android:label="@7F11005C" android:name="com.iconology.catalog.publishers.details.PublisherDetailActivity" android:parentActivityName="com.iconology.catalog.publishers.list.PublishersActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.iconology.catalog.publishers.list.PublishersActivity"/>
+		</activity>
+		<activity android:label="@7F11005E" android:name="com.iconology.ui.store.retail.RetailLocatorActivity"/>
+		<activity android:theme="@7F1201D8" android:name="com.iconology.search.ui.SearchActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.SEARCH"/>
+			</intent-filter>
+			<meta-data android:name="android.app.searchable" android:resource="@7F140005"/>
+		</activity>
+		<activity android:name="com.iconology.ui.store.sectionedpage.SectionedPageSectionActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+		</activity>
+		<activity android:theme="@7F1201CE" android:label="@7F110061" android:name="com.iconology.catalog.series.SeriesActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+		</activity>
+		<activity android:theme="@7F1201CE" android:label="@7F110061" android:name="com.iconology.catalog.series.SeriesDetailActivity" android:parentActivityName="com.iconology.catalog.series.SeriesActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.iconology.catalog.series.SeriesActivity"/>
+		</activity>
+		<activity android:theme="@7F1201CE" android:label="@7F110065" android:name="com.iconology.catalog.storyarcs.StoryArcsActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+		</activity>
+		<activity android:theme="@7F1201CE" android:label="@7F110065" android:name="com.iconology.catalog.storyarcs.StoryArcDetailActivity" android:parentActivityName="com.iconology.catalog.storyarcs.StoryArcsActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.iconology.catalog.storyarcs.StoryArcsActivity"/>
+		</activity>
+		<activity android:label="@7F110067" android:name="com.iconology.ui.store.wishlist.WishListActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+		</activity>
+		<activity android:label="@7F11005F" android:name="com.iconology.ui.store.unlimited.ReturnBooksActivity"/>
+		<activity android:theme="@7F1201CE" android:label="@7F110066" android:name="com.iconology.unlimited.ui.UnlimitedActivity">
+			<meta-data android:name="android.app.default_searchable" android:value="com.iconology.search.ui.SearchActivity"/>
+		</activity>
+		<meta-data android:name="LOCALYTICS_APP_KEY" android:value="@7F110169"/>
+		<receiver android:name="com.localytics.android.ReferralReceiver" android:enabled="@7F05002F" android:exported="true">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER"/>
+			</intent-filter>
+		</receiver>
+		<activity android:name="com.localytics.android.PushTrackingActivity" android:enabled="@7F05002E"/>
+		<service android:name="com.localytics.android.FirebaseTokenService" android:enabled="@7F050028" android:exported="true">
+			<intent-filter>
+				<action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+			</intent-filter>
+		</service>
+		<service android:name="com.localytics.android.FirebaseService" android:enabled="@7F050028" android:exported="true">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT"/>
+			</intent-filter>
+		</service>
+		<receiver android:name="com.localytics.android.LocationUpdateReceiver" android:enabled="@7F05002D"/>
+		<receiver android:name="com.localytics.android.BootReceiver" android:enabled="@7F05002D">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+		</receiver>
+		<service android:name="com.localytics.android.BackgroundService" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" android:enabled="@7F05002C" android:exported="true">
+			<intent-filter>
+				<action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+			</intent-filter>
+		</service>
+		<receiver android:name="com.tune.TuneTracker">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER"/>
+			</intent-filter>
+		</receiver>
+		<uses-library android:name="com.amazon.client.metrics.api" android:required="false"/>
+		<activity android:label="Amazon AuthPortal" android:name="com.amazon.identity.auth.device.AuthPortalUIActivity" android:permission="com.amazon.identity.auth.device.perm.AUTH_SDK" android:exported="true" android:launchMode="1" android:configChanges="@7F0B0012" android:allowTaskReparenting="true"/>
+		<service android:name="com.amazon.identity.auth.device.bootstrapSSO.BootstrapSSOService" android:enabled="false">
+			<intent-filter>
+				<action android:name="com.amazon.identity.action.BOOTSTRAP_SSO"/>
+			</intent-filter>
+		</service>
+		<service android:name="com.amazon.identity.auth.device.storage.DirtyDataSyncingService" android:exported="false">
+			<intent-filter>
+				<action android:name="com.amazon.identity.action.SYNC_DIRTY_DATA"/>
+			</intent-filter>
+		</service>
+		<service android:name="com.amazon.identity.auth.device.storage.DatabaseCleaner$DatabaseCleaningService" android:exported="false">
+			<intent-filter>
+				<action android:name="com.amazon.identity.action.CLEAN_DATA"/>
+			</intent-filter>
+		</service>
+		<receiver android:name="com.amazon.identity.auth.device.storage.LambortishClock$ChangeTimestampsBroadcastReceiver" android:enabled="false">
+			<intent-filter>
+				<action android:name="android.intent.action.TIME_SET"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.amazon.identity.auth.accounts.SessionUserChangedToAccountForPackageChangedAdpater">
+			<intent-filter>
+				<action android:name="com.amazon.dcp.sso.action.session.users.changed"/>
+			</intent-filter>
+		</receiver>
+		<activity android:theme="@android:0103000F" android:name="com.google.android.gms.ads.AdActivity" android:exported="false" android:configChanges="0x00000FB0"/>
+		<meta-data android:name="com.google.android.gms.version" android:value="@7F0B0017"/>
+		<meta-data android:name="android.support.VERSION" android:value="26.1.0"/>
+	</application>
+</manifest>
