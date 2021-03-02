@@ -8,7 +8,7 @@ Composto por transações anônimas do *blockchain* da criptomoeda *Bitcoin*. O 
 O conjunto de dados possui 203.769 nós e 234.355 arestas, sua composição de exemplos pode ser observada na figura abaixo. Utilizou-se neste trabalho a porção rotulada do conjunto de dados (22.8%), onde 4.545 transações são rotulados como ilícitas e 42.019 como lícitas. A proporção de exemplos ilícitos para lícitos é de aproximadamente 1:10 caracterizando um conjunto de dados desbalanceado. Todo conjunto de dados é majoritariamente numérico.
 
 
-![](/01_elliptic_dataset/figs/classes_proportions_1.png)
+![Classes proportions](/01_elliptic_dataset/figs/classes_proportions_1.png)
 
 
 A descrição das características não está presente devido à proteção intelectual. No entanto as primeiras 94 colunas de características são informações locais da transação, presentes no *blockchain* como o id da transação, entradas e saídas, volume de saída e taxa da transação. As demais 72 características foram agregadas utilizando as informações das transação anterior e posterior a partir de uma transação central e contém o desvio padrão e coeficientes de correlação das transações vizinhas que utilizam as mesmas informações como entradas, saídas, taxa da transação, entre outras.
@@ -16,7 +16,7 @@ A descrição das características não está presente devido à proteção inte
 Para coleta do conjunto de dados foi considerado 49 intervalos de tempo consecutivos. A figura abaixo mostra a distribuição de exemplos lícitos e ilícitos em cada intervalo de tempo fixo presente no mesmo. Nota-se que a quantidade de exemplos ilícitos é pequena em alguns casos.
 
 
-![](/01_elliptic_dataset/figs/classes_by_timestep.png)
+![Classes by timestep](/01_elliptic_dataset/figs/classes_by_timestep.png)
 
 
 - Que tipos de dados você tem, majoritariamente (atributos numéricos, textuais)?
